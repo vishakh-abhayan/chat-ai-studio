@@ -70,7 +70,18 @@ const Index = () => {
   
   // Update API service when config changes
   useEffect(() => {
-    apiServiceRef.current = new AzureOpenAIService(config);
+    // Only create the service if we have the minimum required config
+    if (config.apiKey && config.endpoint && config.deploymentName) {
+      try {
+        apiServiceRef.current = new AzureOpenAIService(config);
+      } catch (error) {
+        console.error("Error initializing Azure OpenAI service:", error);
+        toast.error("Failed to initialize Azure OpenAI service");
+        apiServiceRef.current = null;
+      }
+    } else {
+      apiServiceRef.current = null;
+    }
   }, [config]);
   
   // Scroll to bottom when messages change
