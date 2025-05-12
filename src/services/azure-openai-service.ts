@@ -20,6 +20,7 @@ export class AzureOpenAIService {
           endpoint: this.config.endpoint,
           apiVersion: this.config.apiVersion,
           deployment: this.config.deploymentName,
+          dangerouslyAllowBrowser: true, // Add this flag to enable browser usage
         });
       } catch (error) {
         console.error('Error initializing Azure OpenAI client:', error);
