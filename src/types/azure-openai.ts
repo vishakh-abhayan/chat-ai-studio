@@ -1,4 +1,3 @@
-
 export interface AzureOpenAIConfig {
   apiKey: string;
   endpoint: string;
@@ -22,25 +21,4 @@ export interface Conversation {
   messages: Message[];
   createdAt: string;
   updatedAt: string;
-}
-
-export interface APIResponse {
-  id: string;
-  object: string;
-  created: number;
-  model: string;
-  choices: {
-    index: number;
-    delta?: {
-      role?: string;
-      content?: string;
-    };
-    message?: Message;
-    finish_reason: string | null;
-  }[];
-  usage?: {
-    prompt_tokens: number;
-    completion_tokens: number;
-    total_tokens: number;
-  };
 }
