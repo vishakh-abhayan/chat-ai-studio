@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { AzureOpenAIService } from "@/services/azure-openai-service";
@@ -205,7 +204,7 @@ const Index = () => {
           assistantResponse += chunk;
           
           // Update UI with streaming chunks
-          const streamingConversation = {
+          const streamingConversation: Conversation = {
             ...updatedConversation,
             messages: [
               ...updatedMessages.slice(0, -1),
@@ -224,7 +223,7 @@ const Index = () => {
       setIsStreaming(false);
       
       // Ensure final content is saved when streaming completes
-      const finalConversation = {
+      const finalConversation: Conversation = {
         ...updatedConversation,
         messages: [
           ...updatedMessages.slice(0, -1),
@@ -245,7 +244,7 @@ const Index = () => {
       console.error("API Error:", error);
       
       // Remove the placeholder assistant message on error
-      const errorConversation = {
+      const errorConversation: Conversation = {
         ...updatedConversation,
         updatedAt: new Date().toISOString()
       };
