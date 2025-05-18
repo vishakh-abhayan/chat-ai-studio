@@ -1,4 +1,4 @@
-
+// src/components/ChatInput.tsx
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
@@ -38,7 +38,7 @@ export const ChatInput = ({ onSendMessage, isLoading, placeholder = "Type a mess
         placeholder={placeholder}
         disabled={isLoading}
         className={cn(
-          "resize-none pr-14 py-3 max-h-48",
+          "resize-none pr-14 py-3 max-h-48 bg-background border-border",
           isLoading && "opacity-50"
         )}
         rows={1}

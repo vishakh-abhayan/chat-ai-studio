@@ -13,6 +13,7 @@ import { toast } from "sonner";
 import { 
   Trash2, Copy, Download, FilePlus 
 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const DEFAULT_CONFIG: AzureOpenAIConfig = {
   apiKey: "",
@@ -343,7 +344,8 @@ const Index = () => {
   const chatHeader = activeConversation && (
     <div className="p-4 border-b flex items-center justify-between">
       <h2 className="font-medium truncate">{activeConversation.name}</h2>
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-center">
+        <ThemeToggle />
         <Button variant="outline" size="sm" onClick={copyConversation}>
           <Copy size={16} className="mr-1" />
           Copy
@@ -357,7 +359,7 @@ const Index = () => {
   );
   
   return (
-    <div className="flex h-screen bg-white overflow-hidden">
+    <div className="flex h-screen  bg-background overflow-hidden">
       {/* Left sidebar */}
       <div className="w-64 border-r flex flex-col">
         <ConversationList
@@ -370,6 +372,7 @@ const Index = () => {
         />
         
         <div className="mt-auto border-t p-3">
+        
           <Button
             variant="outline"
             className="w-full"

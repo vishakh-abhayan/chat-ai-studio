@@ -46,7 +46,7 @@ export const ConversationList = ({
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-muted/20 dark:bg-muted/10">
       <div className="flex items-center justify-between p-4 border-b">
         <h2 className="font-medium">Conversations</h2>
         <Button variant="outline" size="sm" onClick={onCreateConversation}>
@@ -65,10 +65,10 @@ export const ConversationList = ({
             {conversations.map((conversation) => (
               <li key={conversation.id}>
                 <div
-                  className={`flex items-center p-2 rounded-md ${
+                   className={`flex items-center p-2 rounded-md ${
                     activeConversationId === conversation.id
-                      ? "bg-azure-50"
-                      : "hover:bg-gray-100"
+                      ? "bg-primary/10 text-primary dark:bg-primary/20"
+                      : "hover:bg-muted/50 dark:hover:bg-muted/20"
                   } cursor-pointer group`}
                 >
                   {editingId === conversation.id ? (

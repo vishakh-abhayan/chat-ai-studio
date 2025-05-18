@@ -99,3 +99,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this to src/index.css */
+@layer base {
+  input, textarea, select {
+    @apply bg-background dark:bg-background/40 border-border;
+  }
+  
+  .bg-white {
+    @apply bg-background;
+  }
+  
+  /* Override any explicit white background classes */
+  .bg-gray-50 {
+    @apply bg-muted/50 dark:bg-muted/20;
+  }
+  
+  .bg-gray-100 {
+    @apply bg-muted dark:bg-muted/30;
+  }
+  
+  /* Make sure text colors adapt to dark mode */
+  .text-gray-500, .text-gray-600, .text-gray-700 {
+    @apply text-muted-foreground dark:text-muted-foreground;
+  }
+}

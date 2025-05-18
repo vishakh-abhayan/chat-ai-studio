@@ -36,10 +36,10 @@ export const ConfigPanel = ({
 
   if (isCollapsed) {
     return (
-      <div className="border-l bg-gray-50 flex flex-col items-center py-4">
+      <div className="border-l bg-muted/30 dark:bg-muted/10 flex flex-col items-center py-4">
         <button 
           onClick={onToggleCollapse}
-          className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+          className="p-2 rounded-full hover:bg-muted/50 dark:hover:bg-muted/20 transition-colors"
         >
           <ChevronRight className="rotate-180" size={16} />
         </button>
@@ -49,7 +49,7 @@ export const ConfigPanel = ({
 
   return (
     <div className={cn(
-      "border-l bg-gray-50 w-96 flex flex-col transition-all duration-300 ease-in-out",
+      "border-l bg-muted/30 dark:bg-muted/10 w-96 flex flex-col transition-all duration-300 ease-in-out",
       isCollapsed ? "w-10 p-0" : "p-4"
     )}>
       <div className="flex items-center justify-between mb-4">
