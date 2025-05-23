@@ -1,6 +1,6 @@
 import { AIProviderConfig } from "@/types/ai-providers";
 import { AIServiceInterface } from "./ai-service-interface";
-import { AzureOpenAIService } from "./azure-openai-service";
+import { AzureOpenAIService } from "./providers/azure-openai-service";
 import { OpenAIService } from "./providers/openai-service";
 import { ClaudeService } from "./providers/claude-service";
 import { GeminiService } from "./providers/gemini-service";

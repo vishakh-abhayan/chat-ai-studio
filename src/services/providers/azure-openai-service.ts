@@ -1,6 +1,6 @@
 import { AzureOpenAI } from "openai";
-import { AzureOpenAIConfig, BaseMessage } from "../types/ai-providers";
-import { AIServiceInterface } from "./ai-service-interface";
+import { AzureOpenAIConfig, BaseMessage } from "../../types/ai-providers";
+import { AIServiceInterface } from "../ai-service-interface";
 
 export class AzureOpenAIService implements AIServiceInterface {
   private client: AzureOpenAI | null = null;
